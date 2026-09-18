@@ -1,0 +1,155 @@
+Ex 1 - Fácil
+
+#include <stdio.h>
+
+
+
+
+
+Ex 2 - Médio
+
+#include <stdio.h>
+
+int main()
+{
+    int num, soma;
+    
+    soma = 0;
+    
+    
+    printf("Escreva um número para ininicar a soma ou '0' para parar:\t");
+    scanf("%d", &num);
+    
+    while(num != 0){
+        printf("\nVocê digitou '%d'", num);
+        soma = soma + num;
+        
+        printf("\nDigite um novo número ou 0 para sair\t:");
+        scanf("%d", &num);
+        
+    }
+    
+    printf("Você saiu. Resultado final '%d'", soma);
+    
+    
+}
+
+
+
+
+Ex 3 - Médio
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i;
+
+    for(i = 10; i >= 1; i--){
+        printf("%d\n", i);
+    }
+
+    printf("LANÇAR!!!");
+} 
+
+
+
+
+
+
+Ex 4 - Fácil
+
+
+#include <stdio.h>
+
+int main()
+{
+    int num, soma, i;
+    
+    soma = 0;
+    
+    printf("Escreva um número para ininicar a soma ou '0' para parar:\t");
+    scanf("%d", &num);
+    i = 1;
+    
+    while(num != 0){
+        printf("\nVocê digitou '%d'", num);
+        soma = soma + num;
+        i++;
+        
+        printf("\nDigite um novo número ou 0 para sair\t:");
+        scanf("%d", &num);
+        
+        
+    }
+    
+    printf("Você saiu. Resultado final '%d'\n", soma);
+    printf("Você digitou: '%d' números\n", i);
+    
+    
+}
+
+
+
+
+
+
+Ex 5 - médio
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int menu;
+    float num;
+
+    printf("Digite um número:\t");
+    scanf("%f", &num);
+
+    printf("Escolha a operação:\n");
+    printf("1 - QUADRADO\n");
+    printf("2 - CUBO\n");
+    printf("3 - RAIZ\n");
+    printf("0 - SAIR\n");
+    printf("ESCOLHA:\t");
+    scanf("%d", &menu);
+
+    while(num < 0 && num > 3){
+        printf("Número inválido, tente novamente!");
+        printf("Digite o operador novamente:\t");
+        scanf("%d", &menu);
+            
+    }
+
+    switch(menu){
+        case 1:
+            printf("\n\nVocê escolheu 'QUADRADO'\n");
+            printf("%.0f", num * num);
+            break;
+
+        case 2:
+            printf("\n\nVocê escolheu 'CUBO'\n");
+            printf("%.0f", num * num * num);
+            break;
+    
+        case 3:
+            printf("\n\nVocê escolheu 'RAIZ'\n");
+            printf("%.1f", sqrt(num));
+            break;
+
+        case 4:
+            printf("SAINDO...");
+            break;
+    } 
+}
+
+
+EX 6 - 
+
+
+
+
+

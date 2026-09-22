@@ -147,7 +147,155 @@ int main()
 }
 
 
-EX 6 - 
+
+
+EX 6 - Médio
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int anterior = 0, atual = 1, proximo;
+
+    printf("Digite até qual número você deseja:\t");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++){
+        printf("%d\n", anterior);
+
+        proximo = anterior + atual;
+        anterior = atual;
+        atual = proximo;
+    }
+
+    return 0;
+}
+
+
+
+
+
+EX 7 - Difícil
+
+
+#include <stdio.h>
+
+int main() {
+    int nA, nB, i, j, divisores;
+
+    printf("\nDigite um número:\t");
+    scanf("%d", &nA);
+    
+    printf("\nDigite um outro número (Maior que %d):\t", nA);
+    scanf("%d", &nB);
+        
+    while(nB <= nA){
+        printf("O segundo número precisa ser maior que o primeiro!\n");
+        printf("Digite um outro número (Maior que %d):\t", nA);
+        scanf("%d", &nB);
+    }
+
+    for(i = nA; i <= nB; i++){
+        divisores = 0;
+        for(j = 2; j <= nB; j++){
+            if(i % j == 0){
+                divisores++;
+            }
+        }
+        if(divisores <= 1){
+            printf("%d\n", i);
+        }
+    }
+}
+
+
+
+
+
+EX 8 - Difícil
+
+
+
+#include <stdio.h>
+int main() {
+    int n, i;
+    int anterior = 0, atual = 1, proximo;
+    double razao;
+
+    printf("Digite até qual número você deseja:\t");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++){
+        printf("%d\n", anterior);
+
+        proximo = anterior + atual;
+        anterior = atual;
+        atual = proximo;
+    }
+    
+    razao = (double)anterior / (double)(atual - anterior);
+
+    printf("\nRazao entre os dois ultimos termos: %.3lf\n", razao);
+    printf("Essa razao se aproxima da razao aurea (1.618).\n");
+    
+
+    return 0;
+}
+
+
+
+
+
+
+EX 9 - Difícil
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int numSec, chute, i;
+    
+    srand(time(NULL));
+    numSec = rand() % 100 + 1;
+    
+    i = 1;
+
+    printf("%d\n", numSec);
+
+    printf("----- JOGO DE ADIVINHAÇÃO -----\n\n");
+
+    do{
+        printf("TENTATIVA %d\n", i);
+        printf("Digite um número:\t");
+        scanf("%d", &chute);
+
+        if(chute > numSec){
+            printf("Você errou, o número secreto é menor doq '%d'\n", chute);
+        }else if(chute < numSec){
+            printf("Você errou, o número secreto é maior doq '%d'\n", chute);
+        }else{
+            printf("\n\nVOCÊ ACERTOU O NÚMERO SECRETO, PARABÉNS!!!\n");
+            printf("Tentativas    :\t%d\n", i);
+            printf("Número secreto:\t%d\n", numSec);
+        }
+
+        i++;
+
+    }while(numSec != chute && i <= 7);
+
+    if(chute != numSec){
+        printf("\n\nVOCÊ PERDEU!!!\n");
+        printf("O número secreto era:%d\t", numSec);
+    }
+    
+    return 0;
+}
+
+
+
+
+
 
 
 

@@ -1,0 +1,241 @@
+Exercício 1 - médio:
+
+#include <stdio.h>
+
+int main() {
+    int i, num, maior, menor;
+
+    printf("\nDigite um  número:\t");
+    scanf("%d", &num);
+    maior = num;
+    menor = num;
+
+    for(i = 0; i < 5; i++){
+        printf("\nEscreva outro número:\t");
+        scanf("%d", &num);
+        if(num > maior){
+            maior = num;
+        }
+        if(num < menor){
+            menor = num;
+        }
+    }
+
+    printf("\nMaior número:\t%d", maior);
+    printf("\nMenor número:\t%d", menor);
+
+    
+    
+}
+
+
+
+
+
+Exercício 2 - Fácil:
+
+#include <stdio.h>
+#define N 5
+
+int main() {
+
+    int ordem[N], i, n;
+    for(i = 0; i < 5; i++){
+        printf("\n%d - Escreva um número:\t", i + 1);
+        scanf("%d", &ordem[i]);
+    } 
+
+    n = 0;
+
+    for(i = 4; i >= 0; i--){
+        printf("%d - Número: %d\n", n + 1, i);
+        n++;
+    }
+}
+
+
+
+
+
+
+Exercício 3:
+
+#include <stdio.h>
+#define N 8
+
+int main() {
+
+    int ordem[N], i, maior, menor, num, soma, media;
+
+    
+    
+    for(i = 0; i < 8; i++){
+        printf("\n%d - Escreva um número:\t", i + 1);
+        scanf("%d", &num);
+        ordem[i] = num;
+        if(i == 0){
+            maior = num;
+            menor = num;
+        }else if(num > maior){
+            maior = num;
+        }else if(num < menor){
+            menor = num;
+        }
+        soma = soma + num;
+    }
+
+    printf("\nMaior:\t%d", maior);
+    printf("\nMenor:\t%d", menor);
+    printf("\nSoma :\t%d", soma);
+    printf("\nMédia:\t%d", soma / i);
+    
+    
+    
+    
+}
+
+
+
+
+
+Exercício 4 - Médio:
+
+#include <stdio.h>
+#define N 10
+
+int main() {
+
+    int ordem[N], i, numEsc, posi;
+    
+    for(i = 0; i < 10; i++){
+        printf("\n%d - Escreva um número:\t", i + 1);
+        scanf("%d", &ordem[i]);
+    }
+
+    printf("\nQual número você deseja encontrar?\n");
+    scanf("%d", &numEsc);
+
+    for(i = 0; i < 10; i++){
+        if(numEsc == ordem[i]){
+            printf("\nO número esta na posição:\t%d", i + 1);
+            posi = posi + 1;
+        }
+    }
+
+    if(posi = 0){
+        printf("Número '%d' não encontrado!!", numEsc);
+    }
+    
+}
+
+
+
+
+
+
+Exercício 5 - Difícil:
+
+
+#include <stdio.h>
+
+int main() {
+    int vetor[10], unicos[10];
+    int qtdUnicos = 0;
+    int repetido;
+
+    printf("Digite 10 inteiros:\n");
+
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    
+    for (int i = 0; i < 10; i++) {
+        repetido = 0;
+
+        for (int j = 0; j < qtdUnicos; j++) {
+            if (vetor[i] == unicos[j]) {
+                repetido = 1;
+                break;
+            }
+        }
+
+        if (!repetido) {
+            unicos[qtdUnicos] = vetor[i];
+            qtdUnicos++;
+        }
+    }
+    printf("\nPrimeiro vetor: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", vetor[i]);
+    }
+    
+    printf("\nVetor sem repeticoes: ");
+    for (int i = 0; i < qtdUnicos; i++) {
+        printf("%d ", unicos[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+
+
+
+
+
+Exercício - 6 médio
+
+
+#include <stdio.h>
+#define N 10
+
+int main() {
+
+    float ordem[N], maior, menor, num, soma, media, dp[N];
+    int i;
+
+    
+    
+    for(i = 0; i < 10; i++){
+        printf("\n%d - Escreva uma nota:\t", i + 1);
+        scanf("%f", &num);
+        ordem[i] = num;
+        if(i == 0){
+            maior = num;
+            menor = num;
+        }else if(num > maior){
+            maior = num;
+        }else if(num < menor){
+            menor = num;
+        }
+        soma = soma + num;
+    }
+
+    for(i = 0; i < 10; i++){
+        dp[i] = ordem[i] - (soma / 10);
+    }
+
+    for(i = 0; i < 10; i++){
+        printf(" %d Média - %4.1f |",i + 1, ordem[i]);
+        printf(" %d DP    - %4.1f |\n",i + 1, dp[i]);
+    }
+
+    printf("\nMaior:\t%.1f", maior);
+    printf("\nMenor:\t%.1f", menor);
+    printf("\nSoma :\t%.1f", soma);
+    printf("\nMédia:\t%.1f", soma / i);
+
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
